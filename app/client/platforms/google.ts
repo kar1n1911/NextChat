@@ -221,8 +221,8 @@ export class GeminiProApi implements LLMApi {
           // @ts-ignore
           tools.length > 0
             ? // @ts-ignore
-              [{ functionDeclarations: tools.map((tool) => tool.function) }]
-            : [],
+              [{ functionDeclarations: tools.map((tool) => tool.function) }, { google_search: {} }]
+            : [{ google_search: {} }],
           funcs,
           controller,
           // parseSSE
